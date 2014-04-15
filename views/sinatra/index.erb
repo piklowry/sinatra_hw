@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Music Awesomeness</title>
+	<link rel="stylesheet" type="text/css" href="/application.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/application.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+  <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.js"></script>
+  
+ <script>
+  $(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $('#myImg').attr('src', e.target.result);
+};
+  </script>
+
+</head>
+
+
+
+<body>
+
+<div class="wrap">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	 <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" rel="home" href="#">Logo</a>
+	 </div>
+	
+	  <div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav"></ul>
+		<div class="col-sm-3 col-md-3 pull-right">
+       
+		
+		<!-- /.container -->
+        <ul class="nav navbar-nav navbar-right">
+           <li class="dropdown">
+            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+            <ul id="g-account-menu" class="dropdown-menu" role="menu">
+              <li><a href="#">My Profile</a></li>
+            </ul>
+           </li>
+          <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+        </ul>
+				
+	 </div>	
+	</div>
+</div>
+
+<div class="main">
+
+		 <ul class="rig columns-4">
+     <% @images.each do |image| %>
+     
+ 	   <li>
+ 		
+		<img src="<%= image[:url] %>" class="picturebox"</img>
+		<h3><%= image[:title] %></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+			
+	 </li>
+  <% end %>
+ </ul>
+</div>
+<br>
+
+
+
+<form action="/images" method="post" >
+<img id="myImg" src="#" alt="description" name="picture" /><br>
+<input type="submit" value="Submit">
+<br>
+<input type='file'/><br>
+Title:       <input type="title" id="" name="title"><br>
+Description: <input type="title" id="" name="description"><br>
+<!-- URL:         <input type="url" id="url" name="url"><br> -->
+<input type="submit" value="Submit">
+</form>
+
+
+
+
+
+</div>
+</body>
+</html>
