@@ -1,17 +1,20 @@
 require 'rspec'
 require './app.rb'
 
-describe ToDo do 
-	it 'should have to-dos' do
-		ToDo.to_dos.should_not be_empty
+describe MusicPhotos do 
+	it 'should not have a false entry' do
+		MusicPhotos.music_titles.should_not be_empty
 	end
 
-	it 'should add a to-do' do
-		first_count = ToDo.to_dos.count
-		to_do = "Brush teeth"
-		ToDo.add_to_do(to_do)
-		second_count = ToDo.to_dos.count
+	it 'should not equal what happened'
+	 MusicPhotos.music_titles.should_not eq(nil)
+end
 
-		second_count.should > first_count
+describe PutPhoto do 
+	it 'should have images' do
+		IMAGES.music_titles.should_not be_empty
 	end
 end
+
+
+

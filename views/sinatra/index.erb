@@ -63,33 +63,27 @@ function imageIsLoaded(e) {
 	</div>
 </div>
 
+
 <div class="main">
 
 		 <ul class="rig columns-4">
-     <% @images.each do |image| %>
+     <% @new_title.each do |m| %>
      
  	   <li>
  		
-		<img src="<%= image[:url] %>" class="picturebox"</img>
-		<h3><%= image[:title] %></h3>
+		<img src= "<%=m.title %>" class="picturebox"</img>
+		<h3><%= m.description %></h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
 			
 	 </li>
   <% end %>
  </ul>
-</div>
-<br>
+
 
 
 
 <form action="/images" method="post" >
-<img id="myImg" src="#" alt="description" name="picture" /><br>
-<input type="submit" value="Submit">
-<br>
-<input type='file'/><br>
-Title:       <input type="title" id="" name="title"><br>
-Description: <input type="title" id="" name="description"><br>
-<!-- URL:         <input type="url" id="url" name="url"><br> -->
+Title:       <input type="type" id="title" name="title"><br>
 <input type="submit" value="Submit">
 </form>
 
