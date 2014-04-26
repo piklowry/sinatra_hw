@@ -1,0 +1,16 @@
+			<!-- //edit form -->
+			<div class="form container" style="width:400ox;height:500px;margin-left:300px;margin-top:100px;"
+			<form action="/images/<%= @music_photo.id %>" method="post" >
+			<input type="hidden" name="_method" value="put" />
+			<input type="text" id="description" name="[music_photo]description" value="<%= @music_photo.description %>">
+			<input type="text" id="title" name="[music_photo]title" value="<%= @music_photo.title %>">
+			<input class="button" type="submit" value="Save Changes">
+		</form>
+
+		<form action="/images/<%= @music_photo.id %>" method="post">
+			<input type="hidden" name="_method" value="delete" />
+		 	<input class="button" type="submit" value="Delete" />
+		</form>	
+		<a href="/images"><div class="button"><p>Back to Home</p></div></a>
+
+
